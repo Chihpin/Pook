@@ -8,9 +8,10 @@
 
 import UIKit
 
-protocol JsonParse {
+protocol FromJson {
+    init?(Json json:Dictionary<String, Any>)
 }
 
 class Model: NSObject {
-
+    
 }

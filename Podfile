@@ -15,4 +15,5 @@ end
 
 target 'Pook' do
     pod 'PooKit',        :path => '.'
+    pod 'Alamofire',     '~> 4.2.0'
 end

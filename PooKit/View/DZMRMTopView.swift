@@ -22,14 +22,14 @@ class DZMRMTopView: DZMRMBaseView {
         
         // 返回
         back = UIButton(type:.custom)
-        back.setImage(UIImage(named:"G_Back_0"), for: .normal)
+        back.setImage(UIImage(fb_named:"G_Back_0"), for: .normal)
         addSubview(back)
         
         // 书签
         mark = UIButton(type:.custom)
         mark.contentMode = .center
-        mark.setImage(UIImage(named:"RM_17"), for: .normal)
-        mark.setImage(UIImage(named:"RM_18"), for: .selected)
+        mark.setImage(UIImage(fb_named:"RM_17"), for: .normal)
+        mark.setImage(UIImage(fb_named:"RM_18"), for: .selected)
         mark.addTarget(self, action: #selector(DZMRMTopView.clickMark(button:)), for: .touchUpInside)
         addSubview(mark)
     }

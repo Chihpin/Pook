@@ -59,9 +59,9 @@ class DZMBatteryView: UIImageView {
         batteryLevelView = UIView()
         batteryLevelView.layer.masksToBounds = true
         addSubview(batteryLevelView)
+        // 设置样式\
         
-        // 设置样式
-        image = UIImage(named: "G_Battery_Black")?.withRenderingMode(.alwaysTemplate)
+        image = UIImage(fbundle_named: "G_Battery_Black")?.withRenderingMode(.alwaysTemplate)
         tintColor = UIColor.white
     }
     

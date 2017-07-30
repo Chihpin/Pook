@@ -20,7 +20,9 @@ class AppTabBarController: UITabBarController {
         shelfController.tabBarItem.title = "书架";
         booksController.tabBarItem.title = "发现";
         
-        self.viewControllers = [shelfController, booksController];
+        
+        self.viewControllers = [UINavigationController.init(rootViewController: shelfController),
+                                UINavigationController.init(rootViewController: booksController)];
     }
 
     override func didReceiveMemoryWarning() {

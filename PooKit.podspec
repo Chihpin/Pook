@@ -36,6 +36,7 @@ Pod::Spec.new do |s|
     s.public_header_files = [
       'PooKit/*.{h}'
     ]
+    s.resources = ['PooKit/Assets/*.png']
     spec.dependency 'PooKit/Extension'
     spec.dependency 'PooKit/View'
     spec.dependency 'PooKit/Model'

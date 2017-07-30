@@ -9,10 +9,10 @@
 import UIKit
 import ASValueTrackingSlider
 
-class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControllerDelegate,UIPageViewControllerDelegate,UIPageViewControllerDataSource {
+open class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControllerDelegate,UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     /// 阅读模型(必传)
-    var readModel:DZMReadModel!
+    open var readModel:DZMReadModel!
     
     /// 阅读菜单UI
     private(set) var readMenu:DZMReadMenu!
@@ -29,7 +29,7 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
     /// 当前显示的阅读View控制器
     private(set) var currentReadViewController:DZMReadViewController?
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         
         super.viewDidLoad()
         
@@ -248,7 +248,7 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
     // MARK: -- DZMCoverControllerDelegate
     
     /// 切换结果
-    func coverController(_ coverController: DZMCoverController, currentController: UIViewController?, finish isFinish: Bool) {
+    public func coverController(_ coverController: DZMCoverController, currentController: UIViewController?, finish isFinish: Bool) {
         
         // 记录
         currentReadViewController = currentController as? DZMReadViewController
@@ -261,19 +261,19 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
     }
     
     /// 将要显示的控制器
-    func coverController(_ coverController: DZMCoverController, willTransitionToPendingController pendingController: UIViewController?) {
+    public func coverController(_ coverController: DZMCoverController, willTransitionToPendingController pendingController: UIViewController?) {
         
         readMenu.menuSH(isShow: false)
     }
     
     /// 获取上一个控制器
-    func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
+    public func coverController(_ coverController: DZMCoverController, getAboveControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         
         return readOperation.GetAboveReadViewController()
     }
     
     /// 获取下一个控制器
-    func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
+    public func coverController(_ coverController: DZMCoverController, getBelowControllerWithCurrentController currentController: UIViewController?) -> UIViewController? {
         
         return readOperation.GetBelowReadViewController()
     }
@@ -281,7 +281,7 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
     // MARK: -- UIPageViewControllerDelegate
     
     /// 切换结果
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
         if !completed {
             
@@ -305,7 +305,7 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
     }
     
     /// 准备切换
-    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         
         readMenu.menuSH(isShow: false)
         
@@ -320,7 +320,7 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
     private var TempNumber:NSInteger = 1
     
     /// 获取上一页
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         TempNumber -= 1
         
@@ -339,7 +339,7 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
     }
     
     /// 获取下一页
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         TempNumber += 1
         
@@ -357,7 +357,7 @@ class DZMReadController: DZMViewController,DZMReadMenuDelegate,DZMCoverControlle
         }
     }
     
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
     }

@@ -178,12 +178,12 @@ class DZMSegmentedControl: UIView {
             
             if !normalImages.isEmpty {
                 
-                button.setImage(UIImage(named: normalImages[i]), for: .normal)
+                button.setImage(UIImage(fb_named: normalImages[i]), for: .normal)
             }
             
             if !selectImages.isEmpty {
                 
-                button.setImage(UIImage(named: selectImages[i]), for: .selected)
+                button.setImage(UIImage(fb_named: selectImages[i]), for: .selected)
             }
             
             button.addTarget(self, action: #selector(DZMSegmentedControl.clickButton(button:)), for: .touchDown)

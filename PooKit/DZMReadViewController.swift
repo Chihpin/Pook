@@ -118,7 +118,7 @@ public class DZMReadViewController: UIViewController,UITableViewDelegate,UITable
     
     // MARK: -- UITableViewDelegate,UITableViewDataSource
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if DZMReadConfigure.shared().effectType != DZMRMEffectType.upAndDown.rawValue { // 非上下滚动
             
@@ -130,7 +130,7 @@ public class DZMReadViewController: UIViewController,UITableViewDelegate,UITable
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if DZMReadConfigure.shared().effectType != DZMRMEffectType.upAndDown.rawValue { // 非上下滚动
             
@@ -164,7 +164,7 @@ public class DZMReadViewController: UIViewController,UITableViewDelegate,UITable
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if DZMReadConfigure.shared().effectType != DZMRMEffectType.upAndDown.rawValue { // 非上下滚动
             
@@ -188,7 +188,7 @@ public class DZMReadViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     /// Cell消失则清空数据
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if DZMReadConfigure.shared().effectType == DZMRMEffectType.upAndDown.rawValue { // 上下滚动
             
@@ -203,12 +203,12 @@ public class DZMReadViewController: UIViewController,UITableViewDelegate,UITable
     /// 正在拖动
     private var isDragging:Bool = false
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {isDragging = true}
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {isDragging = true}
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {isDragging = false}
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {isDragging = false}
     
     /// 滚动中
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         // 判断是滚上还是滚下
         let translation = scrollView.panGestureRecognizer.translation(in: view)
@@ -347,7 +347,7 @@ public class DZMReadViewController: UIViewController,UITableViewDelegate,UITable
         }
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
     }

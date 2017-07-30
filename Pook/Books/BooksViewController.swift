@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BooksViewController: UIViewController {
+class BooksViewController: ViewController {
 
     
     override func viewDidLoad() {

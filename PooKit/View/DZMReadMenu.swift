@@ -308,9 +308,9 @@ class DZMReadMenu: NSObject,UIGestureRecognizerDelegate {
         
         lightButton = DZMHaloButton(CGRect(x: ScreenWidth - lightButtonWH - DZMSpace_1, y: ScreenHeight, width: lightButtonWH, height: lightButtonWH), haloColor:UIColor.black.withAlphaComponent(0.75))
         
-        lightButton.nomalImage = UIImage(named:"RM_14")
+        lightButton.nomalImage = UIImage(fb_named:"RM_14")
         
-        lightButton.selectImage = UIImage(named:"RM_13")
+        lightButton.selectImage = UIImage(fb_named:"RM_13")
         
         lightButton.isHidden = !menuShow
         

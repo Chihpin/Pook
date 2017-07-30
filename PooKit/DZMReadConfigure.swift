@@ -132,7 +132,7 @@ class DZMReadConfigure: NSObject {
         
         if colorIndex == DZMReadBGColors.index(of: DZMReadBGColor_4) { // 牛皮黄
             
-            return UIColor(patternImage:UIImage(named: "read_bg_0")!)
+            return UIColor(patternImage:UIImage(fb_named: "read_bg_0")!)
             
         }else{
             

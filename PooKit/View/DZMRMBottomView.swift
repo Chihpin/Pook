@@ -31,7 +31,7 @@ class DZMRMBottomView: DZMRMBaseView,ASValueTrackingSliderDelegate {
         for i in 0 ..< funcIcons.count {
             
             let button = UIButton(type:UIButtonType.custom)
-            button.setImage(UIImage(named: funcIcons[i]), for: UIControlState())
+            button.setImage(UIImage(fb_named: funcIcons[i]), for: UIControlState())
             button.tag = i
             button.addTarget(self, action: #selector(DZMRMBottomView.clickButton(_:)), for: UIControlEvents.touchUpInside)
             addSubview(button)
@@ -58,7 +58,7 @@ class DZMRMBottomView: DZMRMBaseView,ASValueTrackingSliderDelegate {
         // 进度条
         slider = ASValueTrackingSlider()
         slider.delegate = self
-        slider.setThumbImage(UIImage(named:"RM_3"), for: .normal)
+        slider.setThumbImage(UIImage(fb_named:"RM_3"), for: .normal)
         slider.minimumValue = 1
         slider.maximumValue = 1
         slider.setMaxFractionDigitsDisplayed(0)

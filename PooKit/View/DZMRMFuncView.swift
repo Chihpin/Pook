@@ -121,7 +121,7 @@ class DZMRMFuncView: DZMRMBaseView {
             leftButton = UIButton(type: .custom)
             leftButton.tag = 0
             leftButton.contentHorizontalAlignment = .right
-            leftButton.setImage(UIImage(named:"RM_15"), for: .normal)
+            leftButton.setImage(UIImage(fb_named:"RM_15"), for: .normal)
             leftButton.frame = CGRect(x: tempX, y: 0, width: buttonW, height: height)
             leftButton.addTarget(self, action: #selector(DZMRMFuncView.clickFontSize(button:)), for: .touchUpInside)
             addSubview(leftButton)
@@ -130,7 +130,7 @@ class DZMRMFuncView: DZMRMBaseView {
             rightButton = UIButton(type: .custom)
             rightButton.tag = 1
             rightButton.contentHorizontalAlignment = .left
-            rightButton.setImage(UIImage(named:"RM_16"), for: .normal)
+            rightButton.setImage(UIImage(fb_named:"RM_16"), for: .normal)
             rightButton.frame = CGRect(x: leftButton.frame.maxX - buttonSpaceW, y: 0, width: buttonW, height: height)
             rightButton.addTarget(self, action: #selector(DZMRMFuncView.clickFontSize(button:)), for: .touchUpInside)
             addSubview(rightButton)

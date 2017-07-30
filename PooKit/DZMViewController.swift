@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DZMViewController: UIViewController {
+open class DZMViewController: UIViewController {
 
     /// 状态栏是否显示白色
     var isStatusBarLightContent:Bool = false {
@@ -22,7 +22,7 @@ class DZMViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         
         super.viewDidLoad()
         
@@ -37,7 +37,7 @@ class DZMViewController: UIViewController {
         // automaticallyAdjustsScrollViewInsets = false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
       
@@ -58,7 +58,7 @@ class DZMViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
     }

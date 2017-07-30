@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Pook: NSObject {
+class Book: Model, FromJson {
     
     var bookId : NSString!
     
@@ -20,5 +20,8 @@ class Pook: NSObject {
     
     var marks = [Mark]()
     
+    required init?(Json json: Dictionary<String, Any>) {
+        
+    }
     
 }

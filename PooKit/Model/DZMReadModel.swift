@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DZMReadModel: NSObject,NSCoding {
+public class DZMReadModel: NSObject,NSCoding {
     
     /// 小说ID
     var bookID:String!
@@ -184,7 +184,7 @@ class DZMReadModel: NSObject,NSCoding {
     
     // MARK: -- NSCoding
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         
         super.init()
         
@@ -197,7 +197,7 @@ class DZMReadModel: NSObject,NSCoding {
         readMarkModels = aDecoder.decodeObject(forKey: "readMarkModels") as! [DZMReadMarkModel]
     }
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(bookID, forKey: "bookID")
         

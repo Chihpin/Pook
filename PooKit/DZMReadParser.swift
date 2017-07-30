@@ -9,7 +9,7 @@
 import UIKit
 import CoreText
 
-public class DZMReadParser: NSObject {
+open class DZMReadParser: NSObject {
     
     // MARK: -- 解析文件
     
@@ -22,7 +22,7 @@ public class DZMReadParser: NSObject {
      
      - returns: ReadModel
      */
-    class func ParserLocalURL(url:URL,complete:((_ readModel:DZMReadModel) ->Void)?) {
+    open class func ParserLocalURL(url:URL,complete:((_ readModel:DZMReadModel) ->Void)?) {
        
         DispatchQueue.global().async {
             
@@ -43,7 +43,7 @@ public class DZMReadParser: NSObject {
      
      - returns: ReadModel
      */
-    class func ParserLocalURL(url:URL) ->DZMReadModel {
+    open class func ParserLocalURL(url:URL) ->DZMReadModel {
         
         let bookID = GetFileName(url)
         
@@ -250,7 +250,7 @@ public class DZMReadParser: NSObject {
      
      - returns: 每一页的起始位置数组
      */
-    class func ParserPageRange(string:String, rect:CGRect, attrs:[String : Any]?) ->[NSRange] {
+    open class func ParserPageRange(string:String, rect:CGRect, attrs:[String : Any]?) ->[NSRange] {
 
         // 记录
         var rangeArray:[NSRange] = []

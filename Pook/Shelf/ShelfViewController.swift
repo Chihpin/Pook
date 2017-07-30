@@ -9,12 +9,18 @@
 import UIKit
 import PooKit
 
-class ShelfViewController: UIViewController {
+class ShelfViewController: ViewController {
 
+    let button = UIButton();
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        button.frame = CGRect(x: 100, y: 100, width: 100, height: 40);
+        button.setTitle("看书", for: .normal)
+        button.backgroundColor = UIColor.blue;
+        button.addTarget(self, action:#selector(openBook), for: .touchUpInside)
+        self.view.addSubview(button);
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,11 +30,8 @@ class ShelfViewController: UIViewController {
     
     func openBook() -> Void {
         let url = Bundle.main.url(forResource: "求魔", withExtension: "txt")
-        
-        
+    
         DZMReadParser.ParserLocalURL(url: url!) {[weak self] (readModel) in
-            
-            MBProgressHUD.hide()
             
             let readController = DZMReadController()
             
