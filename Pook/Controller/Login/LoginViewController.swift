@@ -1,22 +1,18 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Pook
 //
-//  Created by Chihpin on 2017/7/30.
+//  Created by Chihpin on 2017/8/1.
 //  Copyright © 2017年 chihpin. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: ViewController {
 
-    var loaded = false
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor(colorLiteralRed: 245, green: 245, blue: 245, alpha: 1);
+
         // Do any additional setup after loading the view.
     }
 
@@ -25,6 +21,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     /*
     // MARK: - Navigation
 

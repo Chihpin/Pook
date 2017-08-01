@@ -10,19 +10,22 @@ import UIKit
 
 class AppTabBarController: UITabBarController {
 
-    let shelfController = ShelfViewController()
+    let bookcaseController = BookcaseViewController()
     let booksController = BooksViewController()
+    let mineController  = MineViewController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shelfController.tabBarItem.title = "书架";
-        booksController.tabBarItem.title = "发现";
+        bookcaseController.title = "书架";
+        booksController.title = "书库";
+        mineController.title = "我的";
         
         
-        self.viewControllers = [UINavigationController.init(rootViewController: shelfController),
-                                UINavigationController.init(rootViewController: booksController)];
+        self.viewControllers = [UINavigationController.init(rootViewController: bookcaseController),
+                                UINavigationController.init(rootViewController: booksController),
+                                UINavigationController.init(rootViewController: mineController)];
     }
 
     override func didReceiveMemoryWarning() {

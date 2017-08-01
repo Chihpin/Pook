@@ -8,12 +8,11 @@
 
 import UIKit
 
-class BooksViewController: ViewController {
+class MineViewController: ViewController {
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
 

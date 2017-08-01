@@ -12,7 +12,7 @@ extension UIImage {
     
      // load from framework bundle
     
-    convenience init?(fb_named name: String) {
-        self.init(named: name, in:Bundle(for: DZMReadViewController.self), compatibleWith:nil)
+    convenience init?(fb_named: String) {
+        self.init(named: fb_named, in:Bundle(for: DZMReadViewController.self), compatibleWith:nil)
     }
 }
