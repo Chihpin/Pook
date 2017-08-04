@@ -1,13 +1,13 @@
 //
-//  Mark.swift
+//  Config.swift
 //  Pook
 //
-//  Created by Chihpin on 2017/7/10.
+//  Created by Chihpin on 2017/8/2.
 //  Copyright © 2017年 chihpin. All rights reserved.
 //
 
 import UIKit
 
-class Mark: Model {
+struct Config {
     
 }

@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import PullToRefresh
+import MJRefresh
 
-class RefreshTop: PullToRefresh {
+class RefreshTop: MJRefreshHeader {
     
-    convenience init() {
-        self.init(height: 80, position: .top)
-    }
+//    convenience init() {
+//        self.init(height: 80, position: .top)
+//    }
 }

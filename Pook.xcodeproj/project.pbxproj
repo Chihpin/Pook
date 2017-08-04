@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B801B5321E6598C5227F31D /* Pods_PooKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E56751ECFC157B0C0ED454B /* Pods_PooKit.framework */; };
 		8A437032F106E42A0CD82B6D /* Pods_Pook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C39EA88DC4DA212EB5167C8 /* Pods_Pook.framework */; };
+		E224872B1F321FAB008F109B /* BookInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E224872A1F321FAB008F109B /* BookInfoHeader.swift */; };
 		E25CE92F1F28911300C3220E /* DZMCoverController.h in Headers */ = {isa = PBXBuildFile; fileRef = E25CE9021F28911300C3220E /* DZMCoverController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E25CE9301F28911300C3220E /* DZMCoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25CE9031F28911300C3220E /* DZMCoverController.m */; };
 		E25CE9311F28911300C3220E /* DZMeBookRead-Bridging-Pch.h in Headers */ = {isa = PBXBuildFile; fileRef = E25CE9041F28911300C3220E /* DZMeBookRead-Bridging-Pch.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,12 +118,15 @@
 		E26ED8BF1F30592100ACB2D3 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26ED8BE1F30592100ACB2D3 /* TableView.swift */; };
 		E26ED8C11F306B0900ACB2D3 /* RefreshTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26ED8C01F306B0900ACB2D3 /* RefreshTop.swift */; };
 		E26ED8C31F306B1900ACB2D3 /* RefreshBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26ED8C21F306B1900ACB2D3 /* RefreshBottom.swift */; };
+		E28D9B341F31C16D00B7C110 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D9B331F31C16D00B7C110 /* Config.swift */; };
+		E28D9B371F31C29E00B7C110 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28D9B361F31C29E00B7C110 /* Login.storyboard */; };
+		E28D9B391F31CE0600B7C110 /* ChapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D9B381F31CE0600B7C110 /* ChapterCell.swift */; };
 		E2B2C0D21F2F362A00AEC90A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0D01F2F362A00AEC90A /* Api.swift */; };
 		E2B2C0D31F2F362A00AEC90A /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0D11F2F362A00AEC90A /* ApiURL.swift */; };
 		E2B2C0E41F2F376F00AEC90A /* BookcaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0DB1F2F376F00AEC90A /* BookcaseCell.swift */; };
 		E2B2C0E51F2F376F00AEC90A /* BookcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0DC1F2F376F00AEC90A /* BookcaseViewController.swift */; };
 		E2B2C0E61F2F376F00AEC90A /* ApiURL+Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0DE1F2F376F00AEC90A /* ApiURL+Book.swift */; };
-		E2B2C0E81F2F376F00AEC90A /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0E01F2F376F00AEC90A /* BookDetailViewController.swift */; };
+		E2B2C0E81F2F376F00AEC90A /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0E01F2F376F00AEC90A /* BookInfoViewController.swift */; };
 		E2B2C0E91F2F376F00AEC90A /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0E11F2F376F00AEC90A /* BooksViewController.swift */; };
 		E2B2C0EA1F2F376F00AEC90A /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0E31F2F376F00AEC90A /* MineViewController.swift */; };
 		E2B2C0F21F2F4B1D00AEC90A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B2C0ED1F2F4B1D00AEC90A /* Book.swift */; };
@@ -194,6 +198,7 @@
 		8BE401810B5B98F3308EB1C1 /* Pods-Pook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pook/Pods-Pook.release.xcconfig"; sourceTree = "<group>"; };
 		BB858A42392B6312ACE8E690 /* Pods-PooKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PooKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PooKit/Pods-PooKit.debug.xcconfig"; sourceTree = "<group>"; };
 		BBF74C071119EB9C763F6F21 /* Pods-Pook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pook/Pods-Pook.debug.xcconfig"; sourceTree = "<group>"; };
+		E224872A1F321FAB008F109B /* BookInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfoHeader.swift; sourceTree = "<group>"; };
 		E25CE9021F28911300C3220E /* DZMCoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZMCoverController.h; sourceTree = "<group>"; };
 		E25CE9031F28911300C3220E /* DZMCoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZMCoverController.m; sourceTree = "<group>"; };
 		E25CE9041F28911300C3220E /* DZMeBookRead-Bridging-Pch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DZMeBookRead-Bridging-Pch.h"; sourceTree = "<group>"; };
@@ -309,12 +314,15 @@
 		E26ED8BE1F30592100ACB2D3 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		E26ED8C01F306B0900ACB2D3 /* RefreshTop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTop.swift; sourceTree = "<group>"; };
 		E26ED8C21F306B1900ACB2D3 /* RefreshBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBottom.swift; sourceTree = "<group>"; };
+		E28D9B331F31C16D00B7C110 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		E28D9B361F31C29E00B7C110 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E28D9B381F31CE0600B7C110 /* ChapterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterCell.swift; sourceTree = "<group>"; };
 		E2B2C0D01F2F362A00AEC90A /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		E2B2C0D11F2F362A00AEC90A /* ApiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
 		E2B2C0DB1F2F376F00AEC90A /* BookcaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookcaseCell.swift; sourceTree = "<group>"; };
 		E2B2C0DC1F2F376F00AEC90A /* BookcaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookcaseViewController.swift; sourceTree = "<group>"; };
 		E2B2C0DE1F2F376F00AEC90A /* ApiURL+Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiURL+Book.swift"; sourceTree = "<group>"; };
-		E2B2C0E01F2F376F00AEC90A /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		E2B2C0E01F2F376F00AEC90A /* BookInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfoViewController.swift; sourceTree = "<group>"; };
 		E2B2C0E11F2F376F00AEC90A /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		E2B2C0E31F2F376F00AEC90A /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		E2B2C0ED1F2F4B1D00AEC90A /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = Model/Book.swift; sourceTree = "<group>"; };
@@ -543,6 +551,7 @@
 				E263166B1F135C3000CA799E /* LaunchScreen.storyboard */,
 				E263169E1F1375B800CA799E /* 求魔.txt */,
 				E26316691F135C3000CA799E /* Assets.xcassets */,
+				E28D9B321F318C9D00B7C110 /* Config */,
 				E2B2C0F81F2F6BE300AEC90A /* Source */,
 				E25CE95D1F28B14D00C3220E /* Assets */,
 				E2B2C0CF1F2F361800AEC90A /* Api */,
@@ -640,6 +649,22 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		E28D9B321F318C9D00B7C110 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E28D9B331F31C16D00B7C110 /* Config.swift */,
+				E28D9B351F31C1AE00B7C110 /* Alpha */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E28D9B351F31C1AE00B7C110 /* Alpha */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alpha;
+			sourceTree = "<group>";
+		};
 		E2B2C0CF1F2F361800AEC90A /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,7 +698,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B2C0E11F2F376F00AEC90A /* BooksViewController.swift */,
-				E2B2C0E01F2F376F00AEC90A /* BookDetailViewController.swift */,
+				E2B2C0E01F2F376F00AEC90A /* BookInfoViewController.swift */,
 				E2B2C0EC1F2F4AA100AEC90A /* Api */,
 				E2B2C0EB1F2F4A9C00AEC90A /* View */,
 			);
@@ -692,6 +717,8 @@
 			isa = PBXGroup;
 			children = (
 				E2B2C0FB1F2F7D1200AEC90A /* BookCell.swift */,
+				E28D9B381F31CE0600B7C110 /* ChapterCell.swift */,
+				E224872A1F321FAB008F109B /* BookInfoHeader.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -728,6 +755,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B728221F30369900038341 /* LoginViewController.swift */,
+				E28D9B361F31C29E00B7C110 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -978,6 +1006,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28D9B371F31C29E00B7C110 /* Login.storyboard in Resources */,
 				E263166D1F135C3000CA799E /* LaunchScreen.storyboard in Resources */,
 				E263166A1F135C3000CA799E /* Assets.xcassets in Resources */,
 				E263169F1F1375B800CA799E /* 求魔.txt in Resources */,
@@ -1079,9 +1108,10 @@
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/PooKit/PooKit.framework",
-				"${BUILT_PRODUCTS_DIR}/PullToRefresher/PullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1090,9 +1120,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PooKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIconFont.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1160,11 +1191,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28D9B391F31CE0600B7C110 /* ChapterCell.swift in Sources */,
 				E2B2C0FC1F2F7D1200AEC90A /* BookCell.swift in Sources */,
 				E2B2C0D21F2F362A00AEC90A /* Api.swift in Sources */,
 				E2B2C0E91F2F376F00AEC90A /* BooksViewController.swift in Sources */,
 				E26ED8C11F306B0900ACB2D3 /* RefreshTop.swift in Sources */,
 				E2B2C0FA1F2F6C1B00AEC90A /* Foundation+Extension.swift in Sources */,
+				E28D9B341F31C16D00B7C110 /* Config.swift in Sources */,
 				E2B728231F30369900038341 /* LoginViewController.swift in Sources */,
 				E2B728251F30371E00038341 /* Hud.swift in Sources */,
 				E2B2C0E61F2F376F00AEC90A /* ApiURL+Book.swift in Sources */,
@@ -1175,10 +1208,11 @@
 				E2B2C0E41F2F376F00AEC90A /* BookcaseCell.swift in Sources */,
 				E2B2C0F51F2F4B1D00AEC90A /* Model.swift in Sources */,
 				E26316611F135C3000CA799E /* AppDelegate.swift in Sources */,
+				E224872B1F321FAB008F109B /* BookInfoHeader.swift in Sources */,
 				E2B2C0EA1F2F376F00AEC90A /* MineViewController.swift in Sources */,
 				E2B2C0E51F2F376F00AEC90A /* BookcaseViewController.swift in Sources */,
 				E2B2C0F21F2F4B1D00AEC90A /* Book.swift in Sources */,
-				E2B2C0E81F2F376F00AEC90A /* BookDetailViewController.swift in Sources */,
+				E2B2C0E81F2F376F00AEC90A /* BookInfoViewController.swift in Sources */,
 				E26ED8C31F306B1900ACB2D3 /* RefreshBottom.swift in Sources */,
 				E2B2C0F31F2F4B1D00AEC90A /* Chapter.swift in Sources */,
 				E2B2C0F61F2F4B1D00AEC90A /* Record.swift in Sources */,
@@ -1430,6 +1464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chihpin.pook.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1446,6 +1481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chihpin.pook.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

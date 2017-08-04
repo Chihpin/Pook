@@ -22,6 +22,14 @@ class BooksViewController: ViewController, UITableViewDataSource, UITableViewDel
         table.rowHeight = 110
         table.separatorInset = .zero
         table.separatorColor = UIColor(colorLiteralRed: 145, green: 145, blue: 145, alpha: 1);
+        table.mj_header = RefreshTop(refreshingBlock: { [weak self] in
+            self?.page = 1
+            self?._request()
+        })
+        table.mj_footer = RefreshBottom(refreshingBlock: { [weak self] in
+            self?.page += 1
+            self?._request()
+        })
         self.view.addSubview(table)
     }
     
@@ -35,45 +43,25 @@ class BooksViewController: ViewController, UITableViewDataSource, UITableViewDel
         if !loaded {
             Hud.show();
             _request()
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if !loaded {
-            table.addPullToRefresh(RefreshTop()) { [weak self] in
-                self?.page = 1
-                self?._request()
-            }
-            table.addPullToRefresh(RefreshBottom()) { [weak self] in
-                self?.page += 1
-                self?._request()
-            }
             loaded = true
         }
     }
     
     func _request() {
-        Api.get(url: ApiURL.BookList.url, params: ["page":page], completion: { [weak self](response, error) in
+        Api.get(url: ApiURL.Book.List.url, params: ["page":page], completion: { [weak self](response, error) in
             Hud.hide()
             var array = Array<Book>()
-            if let items = response?["data"] as? Array<Any> {
-                for item in items {
-                    array.append(Book(json: item as! Dictionary<String, Any>))
-                }
+            if let items = response?["data"] as? Array<JsonMap> {
+                array = JsonArrayMaping(jsons: items)
             }
-            if self?.page == 0 {
+            if self?.page == 1 {
                 // 刷新
-                self?.table.endRefreshing(at: .top)
                 self?.data = array
+                self?.table.mj_header.endRefreshing()
             } else {
                 // 更多
                 self?.data += array
-                if array.count == 0 {
-                    self?.table.removePullToRefresh((self?.table.bottomPullToRefresh)!)
-                } else {
-                    self?.table.endRefreshing(at: .bottom)
-                }
+                self?.table.mj_footer.endRefreshing()
             }
             self?.table.reloadData()
         })
@@ -102,7 +90,7 @@ class BooksViewController: ViewController, UITableViewDataSource, UITableViewDel
         cell!.nameLabel.text = book.name
         cell!.introLabel.text = book.intro
         cell!.authorLabel.text = book.author
-//        cell!.categoryLabel.text = book.
+        cell!.categoryLabel.text = book.category.string
         
         let size = book.size
         var text = ""
@@ -118,7 +106,7 @@ class BooksViewController: ViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
-        let next = BookDetailViewController()
+        let next = BookInfoViewController()
         next.book = data[indexPath.section]
         next.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(next, animated: true)

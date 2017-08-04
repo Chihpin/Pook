@@ -14,9 +14,15 @@ end
 
 
 target 'Pook' do
-    pod 'PooKit',       :path => '.'
-    pod 'Alamofire',    '~> 4.2.0'
-    pod 'Kingfisher',   '~> 3.10.3'
-    pod 'SnapKit',      '~> 3.2.0'
-    pod 'PullToRefresher', '~> 2.0'
+    pod 'PooKit',           :path => '.'
+    pod 'Alamofire',        '~> 4.2.0'
+    pod 'Kingfisher',       '~> 3.10.3'
+    pod 'SnapKit',          '~> 3.2.0'
+    pod 'MJRefresh'
+    pod 'SwiftIconFont'
+    # pod 'ObjectMapper',     '~> 2.2.8'
+    # pod 'ObjectMapper+Realm', '~> 0.3'
+    # pod 'SwiftyJSON'
+    
+    
 end

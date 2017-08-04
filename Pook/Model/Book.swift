@@ -8,7 +8,52 @@
 
 import UIKit
 
-class Book: Model, FromApiJson {
+
+class Book: Model, Mappable {
+    /*
+     1:玄幻魔法\,2:武侠修真\,3:都市言情\,4:历史军事\,5:侦探推理\,6:网游动漫\,7:科幻小说\,8:恐怖灵异\,9:散文诗词\,10:其他
+     */
+    enum Category: Int {
+        case Xuanhuan = 1
+        case Wuxia  = 2
+        case Dushi  = 3
+        case Lish  = 4
+        case Zhentan = 5
+        case Wangyou = 6
+        case Kehuan = 7
+        case Kongbu = 8
+        case Sanwen = 9
+        case Other=10
+        
+        
+        var string : String {
+            switch self {
+            case .Xuanhuan:
+                return "玄幻魔法"
+            case .Wuxia:
+                return "武侠修真"
+            case .Dushi:
+                return "都市言情"
+            case .Lish:
+                return "历史军事"
+            case .Zhentan:
+                return "侦探推理"
+            case .Wangyou:
+                return "网游动漫"
+            case .Kehuan:
+                return "科幻小说"
+            case .Kongbu:
+                return "恐怖灵异"
+            case .Sanwen:
+                return "玄幻魔法"
+            case .Other:
+                return "其他"
+            }
+        }
+    }
+
+    
+    
     /*
     {
         "size" : 615835,
@@ -57,7 +102,7 @@ class Book: Model, FromApiJson {
     
     var size: Int = 0
     
-    var category: Int = 0
+    var category: Category = .Other
     
     var intro: String = ""
     
@@ -69,29 +114,27 @@ class Book: Model, FromApiJson {
     
     var cover: String = ""
     
-    
     var lastChapter: Chapter?
     
     
-    required init(json: Dictionary<String, Any>) {
-        super.init()
+    required convenience init?(json: JsonMap) {
+        self.init()
         
-        id = json["articleno"] as! Int
-        name = json["articlename"] as! String
-        author = json["author"] as! String
-        intro = json["intro"] as! String
-        update = json["lastupdate"] as! String
-        isFull = json["fullflag"] as! Bool
-        chapterCount = json["chapters"] as! Int
-        size = json["size"] as! Int
-        category = json["subcategory"] as! Int
-        
-        cover = "\(ApiURL.Host)/books/cover/\(id/1000)/\(id)/\(id)s.jpg"
-        
+        id      = json.intValue(key: "articleno")
+        name    = json.stringValue(key: "articlename")
+        author  = json.stringValue(key: "author")
+        intro   = json.stringValue(key: "intro")
+        update  = json.stringValue(key: "lastupdate")
+        isFull  = json.boolValue(key: "fullflag")
+        chapterCount = json.intValue(key: "chapters")
+        size    = json.intValue(key: "size")
+        category = Category(rawValue: json.intValue(key: "subcategory"))!
+
+        cover   = "\(ApiURL.Host)/books/cover/\(id/1000)/\(id)/\(id)s.jpg"
+
         let last = Chapter()
-        last.id = json["lastchapterno"] as! Int
-        last.title = json["lastchapter"] as! String
+        last.id     = json.intValue(key: "lastchapterno")
+        last.title  = json.stringValue(key: "lastchapter")
         lastChapter = last
-        
     }
 }

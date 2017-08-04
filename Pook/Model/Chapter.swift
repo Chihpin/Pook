@@ -8,17 +8,39 @@
 
 import UIKit
 
-class Chapter: NSObject, FromApiJson {
+class Chapter: Model, Mappable {
+    /*
+    {
+        "nextChapterno": 0,
+        "preChapterno": 0,
+        "pinyin": "gangyu1975",
+        "hashCode": -2147483648,
+        "chapterno": 11,
+        "articleno": 2,
+        "articlename": "港娱1975",
+        "chaptertype": 0,
+        "chaptername": "第1章 初遇女神",
+        "size": 4222,
+        "isvip": false,
+        "postdate": "Jul 17, 2017 3:38:37 PM",
+        "deleteflag": false
+    }
+    */
     
     var id : Int = 0
     
     var title : String = ""
     
-    override init() {
-        
-    }
+    var size : Int = 0
     
-    required init(json: Dictionary<String, Any>) {
-        
+    var date : String = ""
+    
+    
+    required convenience init?(json: JsonMap) {
+        self.init()
+        id      = json.intValue(key: "chapterno")
+        title   = json.stringValue(key: "chaptername")
+        size    = json.intValue(key: "size")
+        date    = json.stringValue(key: "postdate")
     }
 }

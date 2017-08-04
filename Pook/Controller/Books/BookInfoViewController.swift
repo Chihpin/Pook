@@ -8,26 +8,53 @@
 
 import UIKit
 
-class BookDetailViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
+class BookInfoViewController: ViewController, UITableViewDataSource, UITableViewDelegate {
     
     var book: Book?
-    let data  = Array<Chapter>()
-    let table = UITableView()
+    var data  = Array<Chapter>()
+    let table = TableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
+        table.mj_header = RefreshTop(refreshingBlock: { [weak self] in
+            self?._request()
+        })
         self.view.addSubview(table)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if !loaded {
+            Hud.show()
+            _request()
+            loaded = true
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    func _request() {
+        if let bookid = book?.id {
+            Api.get(url: ApiURL.Book.Info.url, params: ["articleno":bookid], completion: { [weak self](response, error) in
+                Hud.hide()
+                var array = Array<Chapter>()
+                if let items = response?["data"] as? Array<Any> {
+                    for item in items {
+                        array.append(Chapter(json: item as! JsonMap)!)
+                    }
+                }
+                self?.data = array
+                self?.table.reloadData()
+                self?.table.mj_header.endRefreshing()
+            })
+        }
+    }
+
     
     // MARK: UITableViewDataSource, UITableViewDelegate
     
@@ -39,7 +66,7 @@ class BookDetailViewController: ViewController, UITableViewDataSource, UITableVi
         let id = "cell"
         var cell = table.dequeueReusableCell(withIdentifier: id)
         if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: id)
+            cell = ChapterCell(style: .default, reuseIdentifier: id)
         }
         
         return cell!
@@ -47,7 +74,7 @@ class BookDetailViewController: ViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
-        let book = data[indexPath.section]
+        let chapter = data[indexPath.section]
         
     }
 }
